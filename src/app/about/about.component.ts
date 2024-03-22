@@ -25,9 +25,25 @@ import {createHttpObservable} from '../common/util';
 })
 export class AboutComponent implements OnInit {
 
+
+    /*** emitting streams of values */
     ngOnInit() {
 
+        document.addEventListener('click', evt  => {
+            console.log(evt);
+        });
+    
+        // perform a task periodiquly here we emit a value each second
+        let counter = 0;
+        setInterval(()=> {
+            console.log(counter);
+            counter ++;
+        }, 1000);
 
+        // only contains one value
+        setTimeout(() =>{
+            console.log("finished...");
+        }, 3000)
     }
 
 
